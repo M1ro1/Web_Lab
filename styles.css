@@ -1,0 +1,187 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2e2e52, #1b1b3a);
+  color: #f4f4f9;
+}
+
+header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: background 0.4s, transform 0.3s;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: clamp(20px, 5vw, 40px);
+}
+.course-list .course {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.course-list .course:hover {
+  transform: scale(1.05);
+}
+.course-list .course:hover {
+  box-shadow: 0px 4px 15px rgba(106, 17, 203, 0.4);
+}
+.course-list .course h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+.course-list .course p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+#register form {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: clamp(20px, 5vw, 30px);
+}
+#register form input,
+#register form select,
+#register form button {
+  padding: 12px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  border: none;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+#register form button {
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: #ffffff;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#register form button:hover {
+  background: linear-gradient(90deg, #ff5e62, #ff9966);
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(255, 94, 98, 0.6);
+}
+
+footer {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: clamp(15px, 4vw, 20px);
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+footer p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+footer p a {
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+footer p a:hover {
+  color: #edece9;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  nav ul li a {
+    display: block;
+    padding: 8px 12px;
+  }
+  .course-list {
+    padding: 20px;
+  }
+  .course-list .course {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    padding: 15px;
+  }
+  header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .course-list {
+    gap: 15px;
+    padding: 15px;
+  }
+  .course-list .course {
+    padding: 15px;
+  }
+  #register form {
+    padding: 15px;
+  }
+  #register form input,
+  #register form select,
+  #register form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  footer {
+    padding: 10px;
+  }
+  footer p {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

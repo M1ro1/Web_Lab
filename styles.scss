@@ -1,0 +1,250 @@
+// Змінні для кольорів
+$primary-gradient: linear-gradient(90deg, #6a11cb, #2575fc);
+$body-gradient: linear-gradient(135deg, #2e2e52, #1b1b3a);
+$button-gradient: linear-gradient(90deg, #ff512f, #dd2476);
+$button-hover-gradient: linear-gradient(90deg, #ff5e62, #ff9966);
+$text-color: #f4f4f9;
+$white: #ffffff;
+$link-hover: #edece9;
+$accent-yellow: #ffcc00;
+
+// Міксини
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+@mixin hover-scale {
+  transition: transform 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Стилі для body
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: $body-gradient;
+  color: $text-color;
+}
+
+// Заголовок
+header {
+  background: $primary-gradient;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); // Адаптивний розмір шрифту
+    color: $white;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+// Навігація
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block; // inline-block для кращої адаптивності
+      margin: 0 10px;
+
+      a {
+        text-decoration: none;
+        color: $white;
+        padding: 10px 15px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        transition: background 0.4s, transform 0.3s;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.4);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+// Курси
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: clamp(20px, 5vw, 40px);
+
+  .course {
+    @include glass-effect;
+    padding: 20px;
+    width: 100%; // Повна ширина на малих екранах
+    max-width: 300px; // Обмеження для більших екранів
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+    @include hover-scale;
+
+    &:hover {
+      box-shadow: 0px 4px 15px rgba(106, 17, 203, 0.4);
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    p {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+  }
+}
+
+// Форма запису
+#register {
+  form {
+    @include glass-effect;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: clamp(20px, 5vw, 30px);
+
+    input,
+    select,
+    button {
+      padding: 12px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: none;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    button {
+      background: $button-gradient;
+      color: $white;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        background: $button-hover-gradient;
+        transform: scale(1.1);
+        box-shadow: 0px 4px 15px rgba(255, 94, 98, 0.6);
+      }
+    }
+  }
+}
+
+// Футер
+footer {
+  background: $primary-gradient;
+  padding: clamp(15px, 4vw, 20px);
+  text-align: center;
+  color: $white;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+
+  p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+
+    a {
+      color: $accent-yellow;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $link-hover;
+      }
+    }
+  }
+}
+
+// Медіа-запити для адаптивності
+@media screen and (max-width: 768px) {
+  nav {
+    ul {
+      li {
+        display: block; // Вертикальна навігація на планшетах
+        margin: 10px 0;
+
+        a {
+          display: block;
+          padding: 8px 12px;
+        }
+      }
+    }
+  }
+
+  .course-list {
+    padding: 20px;
+
+    .course {
+      max-width: 100%; // Повна ширина для планшетів
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 15px;
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+  }
+
+  nav {
+    ul {
+      li {
+        margin: 5px 0;
+
+        a {
+          font-size: 0.9rem;
+          padding: 8px 10px;
+        }
+      }
+    }
+  }
+
+  .course-list {
+    gap: 15px;
+    padding: 15px;
+
+    .course {
+      padding: 15px;
+    }
+  }
+
+  #register {
+    form {
+      padding: 15px;
+
+      input,
+      select,
+      button {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  footer {
+    padding: 10px;
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
