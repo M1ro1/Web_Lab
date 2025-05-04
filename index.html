@@ -1,67 +1,109 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Запис на IT-курси</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Запис на IT-курси</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Запис на онлайн IT-курси</h1>
-        <nav>
-            <ul>
-                <li><a href="#courses">Курси</a></li>
-                <li><a href="#register">Запис</a></li>
-                <li><a href="#contact">Контакти</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="courses">
-        <h2>Наші курси</h2>
-        <div class="course-list">
-            <div class="course">
-                <h3>Основи програмування</h3>
-                <p>Вивчіть Python, C++ та Java.</p>
-            </div>
-            <div class="course">
-                <h3>Веб-розробка</h3>
-                <p>HTML, CSS, JavaScript та сучасні фреймворки.</p>
-            </div>
-            <div class="course">
-                <h3>Кібербезпека</h3>
-                <p>Захист інформації, криптографія, етичний хакинг.</p>
-            </div>
-            <div class="course">
-                <h3>Розробка мобільних додатків</h3>
-                <p>Android, iOS, Flutter, React Native.</p>
-            </div>
-            <div class="course">
-                <h3>Штучний інтелект та машинне навчання</h3>
-                <p>Data Science, нейронні мережі, Python.</p>
-            </div>
+  <header>
+    <h1>Запис на онлайн IT-курси</h1>
+    <nav>
+      <ul>
+        <li><a href="#courses">Курси</a></li>
+        <li><a href="#register">Запис</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="courses">
+    <h2>Наші курси</h2>
+    <div class="course-list">
+      <div class="course" onclick="toggleDetails(this)">
+        <h3>Основи програмування</h3>
+        <p>Вивчіть Python, C++ та Java.</p>
+        <div class="course-details">
+          <p>Тривалість: 10 тижнів</p>
+          <p>Рівень: Початковий</p>
+          <p>Формат: Онлайн, з підтримкою ментора</p>
+          <p>Інструменти: PyCharm, VS Code, Git</p>
         </div>
-    </section>
+      </div>
 
-    <section id="register">
-        <h2>Запишіться на курс</h2>
-        <form>
-            <input type="text" placeholder="Ім'я" required>
-            <input type="email" placeholder="Email" required>
-            <select>
-                <option value="programming">Основи програмування</option>
-                <option value="web">Веб-розробка</option>
-                <option value="cybersecurity">Кібербезпека</option>
-                <option value="mobile">Розробка мобільних додатків</option>
-                <option value="ai">Штучний інтелект та машинне навчання</option>
-            </select>
-            <button type="submit">Записатися</button>
-        </form>
-    </section>
+      <div class="course" onclick="toggleDetails(this)">
+        <h3>Веб-розробка</h3>
+        <p>HTML, CSS, JavaScript та сучасні фреймворки.</p>
+        <div class="course-details">
+          <p>Тривалість: 12 тижнів</p>
+          <p>Рівень: Середній</p>
+          <p>Формат: Онлайн, проєкти + завдання</p>
+          <p>Інструменти: VS Code, React, GitHub</p>
+        </div>
+      </div>
 
-    <footer id="contact">
-        <p>Зв'яжіться з нами: <a href="mailto:info@itcourses.com">info@itcourses.com</a></p>
-    </footer>
+      <div class="course" onclick="toggleDetails(this)">
+        <h3>Кібербезпека</h3>
+        <p>Захист інформації, криптографія, етичний хакинг.</p>
+        <div class="course-details">
+          <p>Тривалість: 14 тижнів</p>
+          <p>Рівень: Просунутий</p>
+          <p>Формат: Теорія + практичні завдання</p>
+          <p>Інструменти: Kali Linux, Wireshark, Metasploit</p>
+        </div>
+      </div>
+
+      <div class="course" onclick="toggleDetails(this)">
+        <h3>Розробка мобільних додатків</h3>
+        <p>Android, iOS, Flutter, React Native.</p>
+        <div class="course-details">
+          <p>Тривалість: 10 тижнів</p>
+          <p>Рівень: Середній</p>
+          <p>Формат: Практика + курсовий проєкт</p>
+          <p>Інструменти: Android Studio, Xcode</p>
+        </div>
+      </div>
+
+      <div class="course" onclick="toggleDetails(this)">
+        <h3>Штучний інтелект та машинне навчання</h3>
+        <p>Data Science, нейронні мережі, Python.</p>
+        <div class="course-details">
+          <p>Тривалість: 16 тижнів</p>
+          <p>Рівень: Просунутий</p>
+          <p>Формат: Онлайн, кейс-стаді, лабораторні</p>
+          <p>Інструменти: Jupyter, TensorFlow, Pandas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <h2>Запишіться на курс</h2>
+    <form>
+      <input type="text" placeholder="Ім'я" required />
+      <input type="email" placeholder="Email" required />
+      <select>
+        <option value="programming">Основи програмування</option>
+        <option value="web">Веб-розробка</option>
+        <option value="cybersecurity">Кібербезпека</option>
+        <option value="mobile">Розробка мобільних додатків</option>
+        <option value="ai">Штучний інтелект та машинне навчання</option>
+      </select>
+      <button type="submit">Записатися</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    <p>
+      Зв'яжіться з нами: <a href="mailto:info@itcourses.com">info@itcourses.com</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleDetails(el) {
+      el.classList.toggle("expanded");
+    }
+  </script>
 </body>
 </html>
